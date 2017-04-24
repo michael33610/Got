@@ -1,0 +1,27 @@
+wcs_got_homepage:
+    path:     /
+    defaults: { _controller: WCSGotBundle:Default:index }
+
+add_personnage:
+    path:     /personnage/add/{prenom}/{nom}/{sexe}/{royaume}
+    defaults: { _controller: WCSGotBundle:Personnage:add }
+
+show:
+    path: /personnage/show/{id}
+    defaults: { _controller: WCSGotBundle:Personnage:show }    
+
+add_royaume:
+    path:     /royaume/add/{nom}/{capitale}/{nbHabitant}
+    defaults: { _controller: WCSGotBundle:Royaume:add }
+
+showroyaume:
+    path:     /royaume/show/{id}
+    defaults: { _controller: WCSGotBundle:Royaume:show }
+
+list_personnage:  
+    path: /personnage/list/{sexe}
+    defaults: { _controller: WCSGotBundle:Personnage:list }   
+
+change_personnage:
+    path: /personnage/change/{id_personnage}/{id_royaume}
+    defaults: { _controller: WCSGotBundle:Personnage:change }    

@@ -1,0 +1,299 @@
+    1  apt-get update
+    2  sudo apt-get update
+    3  ps -eaf
+    4  ps -eaf | more
+    5  sudo apt-get update
+    6  sudo dpkg --configure -a
+    7  sudo apt-get update
+    8  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    9  sudo dpkg –i google-chrome-stable_current_amd64.deb
+   10  sudo apt-get update
+   11  sudo apt-get install git
+   12  ls -lisa
+   13  ls -lisa|more
+   14  sudo apt install git
+   15  git config --global "michael.behrens33@gmail.com"
+   16  git config --global user.email "michael.behrens33@gmail.com"
+   17  git config --global user.name "michael33610"
+   18  ls -lisa
+   19  npm install -g ungit
+   20  sudo apt install npm
+   21  npm install -g ungit
+   22  sudo npm install -g ungit
+   23  ungit
+   24  vi .ungitrc
+   25  ungit
+   26  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+   27  sudo apt-get install -y nodejs
+   28  node -v
+   29  ungit
+   30  vi .ungitrc
+   31  rm .ungitrc
+   32  ungit
+   33  cd /var/www/html
+   34  cd /var
+   35  ls
+   36  cd 
+   37  sudo apt install apache2 php mysql-server libapache2-mod-php php-mysql
+   38  ls
+   39  cd /var
+   40  ls
+   41  cd www
+   42  ls
+   43  cd html
+   44  ls
+   45  more index.html
+   46  sudo cp index.html ~/html
+   47  cd 
+   48  ls
+   49  cd /
+   50  ls
+   51  cd media
+   52  ls
+   53  cd wilder
+   54  ls
+   55  xd ..
+   56  cd ..
+   57  ls
+   58  ls -lisa
+   59  pwd
+   60  ls
+   61  cd
+   62  ls
+   63  ls -lisa
+   64  ls
+   65  rm html
+   66  cd html/
+   67  ls
+   68  rm index.html 
+   69  cd ..
+   70  rmdir html/
+   71  pwd
+   72  mkdir www-dev
+   73  ls
+   74  cd /var/www/html
+   75  ls
+   76  cp index.html /home/wilder/www-dev
+   77  ls
+   78  cd ..
+   79  ls
+   80  php phpinfo()
+   81  php (phpinfo())
+   82  sudo php phpinfo()
+   83  ls
+   84  cd html
+   85  ls
+   86  symfony new flyaround 2.8
+   87  sudo symfony new flyaround 2.8
+   88  ls
+   89  ls -lisa
+   90  cd atelier_throne/
+   91  ls
+   92  ls -lisa
+   93  cd atelier_throne/
+   94  ls -lisa
+   95  cd ../..
+   96  ls
+   97  cd flyaround/
+   98  ls
+   99  cd ..
+  100  chmod -R 777 flyaround
+  101  sudo chmod -R 777 flyaround
+  102  ls
+  103  ls -lisa
+  104  cd /var/html
+  105  cd /var/www/html/flyaround/
+  106  ls
+  107  php app/console server:run
+  108  php app/console server:start
+  109  ls
+  110  git -init
+  111  sudo git -init
+  112  sudo git init
+  113  ls
+  114  ls -lisa
+  115  vi .gitignore 
+  116  git add README.md
+  117  git commit -m "first commit"
+  118  git remote add origin https://github.com/michael33610/flyaround.git
+  119  sudo git add .
+  120  sudo commit -m "first commit
+  121  sudo commit -m "first commit"
+  122  sudo git commit -m "first commit"
+  123  sudo git remote add origin https://github.com/michael33610/flyaround.git
+  124  sudo git push -u origin master
+  125  cd ..
+  126  ls
+  127  chmod -R 777 flyaround
+  128  sudo chmod -R 777 flyaround
+  129  cd flyaround/
+  130  ls
+  131  php bin/console doctrine:database:create
+  132  sudo php bin/console doctrine:database:create
+  133  php bin/console doctrine:generate:crud
+  134  php bin/console debug:router
+  135  php bin/console debug:router --env=prod
+  136  ls
+  137  ls -lisa
+  138  php bin/console server:stop
+  139  sudo php bin/console server:stop
+  140  sudo php bin/console server:start
+  141  mkdir html
+  142  ls
+  143  cd html
+  144  ls
+  145  vi index.html 
+  146  ls -lisa
+  147  sudo chmod 777 index.html
+  148  vi index.html 
+  149  sudo service apache2 restart
+  150  cd ..
+  151  ls
+  152  cd www-dev/
+  153  ls
+  154  chmod 777 index.html
+  155  vi index.html 
+  156  cat index.html
+  157  more index.html
+  158  cd
+  159  symfony -v
+  160  cd /var/www
+  161  ls
+  162  cd html
+  163  mkdir atelier_throne
+  164  sudo mkdir atelier_throne
+  165  ls
+  166  ls -lisa
+  167  cd atelier_throne/
+  168  symfony new atelier_throne 2.8
+  169  sudo symfony new atelier_throne 2.8
+  170  cd atelier_throne/
+  171  ls
+  172  sudo vi app/config/parameters.yml
+  173  sudo php app/console server:start
+  174  ls
+  175  php app/console generate:bundle
+  176  ls
+  177  ls -lisa
+  178  cd ..
+  179  [A
+  180  chown -R wilder:wilderatelier_throne
+  181  sudo chown -R wilder:wilder atelier_throne
+  182  cd atelier_throne/
+  183  php app/console generate:bundle
+  184  php app/console doctrine:database:create
+  185  php app/console doctrine:generate:entity
+  186  php app/console doctrine:schema:update --force
+  187  php app/console doctrine:generate:entities
+  188  php app/console
+  189  php app/console doctrine:generate:entities
+  190  php app/console doctrine:generate:entities wcs\GameOfThronesBundle
+  191  git remote add origin https://github.com/michael33610/GameOfThrones.git
+  192  git add .
+  193  git commit -m "premiere version atelier"
+  194  git push -u origin master
+  195  git add .
+  196  git -commit "la suite 2"
+  197  git commit -m "la suite 2"
+  198  git push
+  199  cd ..
+  200  ls
+  201  cd ..
+  202  ls
+  203  rmdir flyaround
+  204  sudo rmdir flyaround
+  205  sudo rm -rf flyaround
+  206  ls
+  207  symfony new flyaround
+  208  sudo symfony new flyaround
+  209  cd flyaround/
+  210  ls
+  211  git init
+  212  sudo git add .
+  213  sudo git commit -m "premier commit"
+  214  sudo git remote add origin https://github.com/michael33610/flyaround.git
+  215  sudo git push -u origin master
+  216  cd ..
+  217  ls
+  218  sudo symfony new wildexchange 2.8
+  219  ls
+  220  sudo chmod -R 777 wildexchange
+  221  ls
+  222  cd fly
+  223  cd flyaround/
+  224  ls
+  225  php bin/console generate:bundle
+  226  ls
+  227  cd src
+  228  ls
+  229  cd wcs
+  230  ls
+  231  rm FlyAroundBundle/
+  232  sudo rm -rf FlyAroundBundle/
+  233  ls
+  234  php bin/console generate:bundle
+  235  cd ..
+  236  ls
+  237  cd ..
+  238  php bin/console generate:bundle
+  239  ls
+  240  cd src
+  241  ls
+  242  cd AppBundle/
+  243  ls
+  244  cd ..
+  245  ls
+  246  cd ..
+  247  php bin/console generate:bundle
+  248  ls
+  249  php bin/console doctrine:generate:entity
+  250  php bin/console doctrine:schema:update --force
+  251  mysql -u root -p
+  252  cd /var/www/html
+  253  ls
+  254  rm -rf wildExchange
+  255  ls
+  256  cd WildExchange/
+  257  ls
+  258  cd ..
+  259  rm -Rf WildExchange
+  260  ls
+  261  cd 
+  262  ls
+  263  rm -Rf WildExchange
+  264  ls
+  265  cd /var
+  266  ls
+  267  cd www
+  268  cd html
+  269  ls
+  270  cd RBM-WildExchange/
+  271  ls
+  272  git
+  273  cd ..
+  274  ls
+  275  mkdir Weather-Mood
+  276  git clone https://github.com/Virginie3377/Weather-Mood.git
+  277  ls
+  278  cd Weather-Mood/
+  279  ls
+  280  cd ..
+  281  cd RBM-WildExchange/
+  282  ls
+  283  git status
+  284  cd ..
+  285  ls
+  286  mkdir flyaround/
+  287  ls
+  288  cd flyaround/
+  289  git status
+  290  git log
+  291  git branch
+  292  cd ..
+  293  cd GotDojo/
+  294  ls
+  295  mysql -u root -p
+  296  more .history
+  297  history
+  298  history|more
+  299  history> historique_170520

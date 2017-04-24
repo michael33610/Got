@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}WCSGotBundle:Personnage:changePersoRoyaumeAction{% endblock %}
+
+{% block body %}
+
+    <h1>Welcome to the Personnage:show page</h1>
+
+    {{personnage.nom}}
+    {{personnage.prenom}}
+    {{personnage.sexe}}
+
+    <br>
+
+	nouveau royaume =
+        {% if personnage.royaume  %}
+            {{ personnage.royaume.id }}
+            {{ personnage.royaume.nom}}
+        {% endif %}
+
+    <br>
+
+    ancien royaume=
+        {% if ancien_royaume %}
+            {{ ancien_royaume.id }}
+            {{ ancien_royaume.nom }}
+        {% endif %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}WCSGotBundle:Personnage:show{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Personnage:show page</h1>
+
+{{personnage.nom}}
+{{personnage.prenom}}
+{{personnage.sexe}}
+{{personnage.royaume.id}}
+{{personnage.royaume.nom}}
+
+{% endblock %}
