@@ -50,6 +50,13 @@ class Personnage
     private $bio;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slugper", type="string", length=255)
+     */
+    private $slugper;
+
+    /**
     *@ORM\ManyToOne(targetEntity="Royaume", inversedBy="personnages")
     */
     private $royaume;
@@ -160,5 +167,28 @@ class Personnage
     {
         return $this->bio;
     }
-}
 
+    /**
+     * Set royaume
+     *
+     * @param \WCS\GotBundle\Entity\Royaume $royaume
+     *
+     * @return Personnage
+     */
+    public function setRoyaume(\WCS\GotBundle\Entity\Royaume $royaume = null)
+    {
+        $this->royaume = $royaume;
+
+        return $this;
+    }
+
+    /**
+     * Get royaume
+     *
+     * @return \WCS\GotBundle\Entity\Royaume
+     */
+    public function getRoyaume()
+    {
+        return $this->royaume;
+    }
+}

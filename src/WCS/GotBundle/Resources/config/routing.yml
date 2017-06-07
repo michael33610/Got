@@ -24,4 +24,12 @@ list_personnage:
 
 change_personnage:
     path: /personnage/change/{id_personnage}/{id_royaume}
-    defaults: { _controller: WCSGotBundle:Personnage:change }    
+    defaults: { _controller: WCSGotBundle:Personnage:change }  
+
+add_pers:
+    path:     /personnage/add
+    defaults: { _controller: WCSGotBundle:Personnage:add }
+
+edit_pers:
+    path:     /personnage/edit/{id}
+    defaults: { _controller: WCSGotBundle:Personnage:edit }

@@ -43,6 +43,14 @@ class Royaume
     private $nbHabitant;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slugroy", type="string", length=255)
+     */
+    private $slugroy;
+
+
+    /**
     *@ORM\OneToMany(targetEntity="Personnage", mappedBy="royaume")
     */
     private $personnages;
@@ -129,5 +137,53 @@ class Royaume
     {
         return $this->nbHabitant;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->personnages = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add personnage
+     *
+     * @param \WCS\GotBundle\Entity\Personnage $personnage
+     *
+     * @return Royaume
+     */
+    public function addPersonnage(\WCS\GotBundle\Entity\Personnage $personnage)
+    {
+        $this->personnages[] = $personnage;
+
+        return $this;
+    }
+
+    /**
+     * Remove personnage
+     *
+     * @param \WCS\GotBundle\Entity\Personnage $personnage
+     */
+    public function removePersonnage(\WCS\GotBundle\Entity\Personnage $personnage)
+    {
+        $this->personnages->removeElement($personnage);
+    }
+
+    /**
+     * Get personnages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPersonnages()
+    {
+        return $this->personnages;
+    }
+
+
+
+    public function __toString(){
+        //return $this->getnom();
+        return $this->nom;
+
+    }
+}

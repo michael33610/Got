@@ -43,6 +43,14 @@ class Royaume
     private $nbHabitant;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slugroy", type="string", length=255)
+     */
+    private $slugroy;
+
+
+    /**
     *@ORM\OneToMany(targetEntity="Personnage", mappedBy="royaume")
     */
     private $personnages;
@@ -177,5 +185,29 @@ class Royaume
         //return $this->getnom();
         return $this->nom;
 
+    }
+
+    /**
+     * Set slugroy
+     *
+     * @param string $slugroy
+     *
+     * @return Royaume
+     */
+    public function setSlugroy($slugroy)
+    {
+        $this->slugroy = $slugroy;
+
+        return $this;
+    }
+
+    /**
+     * Get slugroy
+     *
+     * @return string
+     */
+    public function getSlugroy()
+    {
+        return $this->slugroy;
     }
 }

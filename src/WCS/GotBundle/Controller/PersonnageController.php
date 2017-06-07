@@ -5,38 +5,108 @@
 	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 	use WCS\GotBundle\Entity\Personnage;
 	use WCS\GotBundle\Entity\Royaume;
+	use WCS\GotBundle\Form\PersonnageType;
+	use Symfony\Component\HttpFoundation\Request;
+
+	use WCS\GotBundle\Service\SlugService;
 
 	class PersonnageController extends Controller
 	{
-		public function addAction($prenom, $nom, $sexe, $royaume, $bio = 'Lorem ipsum')
+		public function addAction(Request $request)
+		{
+	// je crée un nouvel élève 
+		$personnage = new Personnage();
+
+
+	//pour traiter avec form
+	    $form = $this->createForm(PersonnageType::class, $personnage);    
+	    // $form contient maintenant notre formulaire, on peut le manipuler comme précédemment
+
+	    $form->handleRequest($request);
+	    if ($form->isSubmitted() && $form->isValid()) {
+	        $em = $this->getDoctrine()->getManager();
+
+
+//pour pouvoir utiliser le service !!!!! outil pour utiliser le service
+			$slugifyer = $this->get('WCS.SlugService');
+
+			$personnage->setSlugPer($slugifyer->slugify($personnage->getNom()));
+
+
+	        $em->persist($personnage);
+	        $em->flush();
+
+	        //return $this->redirectToRoute('homepage');
+	    }
+	    return $this->render('WCSGotBundle:Personnage:Personnage/add.html.twig', array(
+	        'form' => $form->createView()
+	    ));
+
+
+	    public function editAction(Request $request)
+		{
+	// je crée un nouvel élève 
+		//$personnage = new Personnage();
+
+
+	//pour traiter avec form
+	    $form = $this->createForm(PersonnageType::class, $personnage);    
+	    // $form contient maintenant notre formulaire, on peut le manipuler comme précédemment
+
+	    $form->handleRequest($request);
+	    if ($form->isSubmitted() && $form->isValid()) {
+
+//pour pouvoir utiliser le service !!!!! outil pour utiliser le service
+			$slugifyer = $this->get('WCS.SlugService');
+
+			$personnage->setSlugPer($slugifyer->slugify($personnage->getNom()));
+
+
+	        $em = $this->getDoctrine()->getManager();
+	        //$em->persist($personnage);
+	        $em->flush();
+
+	        //return $this->redirectToRoute('homepage');
+	    }
+	    return $this->render('WCSGotBundle:Personnage:Personnage/add.html.twig', array(
+	        'form' => $form->createView()
+	    ));
+
+
+	}
+
+
+
+
+
+		public function showAction($id, Request $request)
 		{
 			$em = $this->getDoctrine()->getManager();
-			$o_royaume = $em->getRepository('WCSGotBundle:Royaume')->find($royaume);
+			$personnage=$em->getRepository('WCSGotBundle:Personnage')->find($id);
 
-	// je crée un nouvel élève 
-			$personnage = new Personnage();
-
-	// J’assigne des valeurs à mes propriétés
-			$personnage->setPrenom($prenom);
-			$personnage->setNom($nom);
-			$personnage->setSexe($sexe);
-			$personnage->setBio($bio);
-			$personnage->setRoyaume($o_royaume);
-
-	// prise en compte de l’objet par Doctrine (pas de requete SQL)
-			$em->persist($personnage);
-
-	// Doctrine fait les requêtes nécessaire sur tous les objets pris en compte dans le script (ici il exécute un INSERT)
-			$em->flush();
-
-			return $this->render('WCSGotBundle:Personnage:Personnage/add.html.twig', array(
-	            // ...
-				));
-		}
+			$form = $this->createForm(PersonnageType::class, $personnage); 
+			$form->handleRequest($request);
 
 
-		public function showAction($id)
-		{
+		    if ($form->isSubmitted() && $form->isValid()) {
+		        $em = $this->getDoctrine()->getManager();
+		        $em->persist($personnage);
+		        $em->flush();
+
+		        return $this->redirectToRoute('homepage');
+		    }
+			return $this->render('WCSGotBundle:Personnage:Personnage/show.html.twig', array(
+		            
+					"personnage"=>$personnage,
+					"form" => $form->createView()
+
+			));
+
+
+	    // $form contient maintenant notre formulaire, on peut le manipuler comme précédemment
+
+
+			/*
 			$em = $this->getDoctrine()->getManager();
 			$personnage=$em->getRepository('WCSGotBundle:Personnage')->find($id);
 
@@ -49,7 +119,11 @@
 				"personnage"=>$personnage
 
 				));
+				*/
 		}
+
+
+
 
 
 		public function listAction($sexe){

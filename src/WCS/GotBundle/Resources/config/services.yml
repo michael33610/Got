@@ -2,3 +2,5 @@ services:
 #    wcs_got.example:
 #        class: WCS\GotBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+    WCS.SlugService:
+        class:    WCS\GotBundle\Service\SlugService

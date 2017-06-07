@@ -50,6 +50,13 @@ class Personnage
     private $bio;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slugper", type="string", length=255)
+     */
+    private $slugper;
+
+    /**
     *@ORM\ManyToOne(targetEntity="Royaume", inversedBy="personnages")
     */
     private $royaume;
@@ -183,5 +190,29 @@ class Personnage
     public function getRoyaume()
     {
         return $this->royaume;
+    }
+
+    /**
+     * Set slugper
+     *
+     * @param string $slugper
+     *
+     * @return Personnage
+     */
+    public function setSlugper($slugper)
+    {
+        $this->slugper = $slugper;
+
+        return $this;
+    }
+
+    /**
+     * Get slugper
+     *
+     * @return string
+     */
+    public function getSlugper()
+    {
+        return $this->slugper;
     }
 }
